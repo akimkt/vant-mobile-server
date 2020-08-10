@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
-
-  res.send('登录');
+  const {username, password} = req.body
+  console.log(username, password);
+  res.send({
+    code: 200,
+    msg: '登录成功'
+  });
 });
 module.exports = router;
