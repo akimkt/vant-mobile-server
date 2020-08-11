@@ -51,6 +51,11 @@ asap@~1.0.0:
   resolved "http://10.240.20.17:7001/asap/download/asap-1.0.0.tgz#b2a45da5fdfa20b0496fc3768cc27c12fa916a7d"
   integrity sha1-sqRdpf36ILBJb8N2jMJ8EvqRan0=
 
+async@^1.5.0:
+  version "1.5.2"
+  resolved "http://10.240.20.17:7001/async/download/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
+  integrity sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
+
 basic-auth@~2.0.0:
   version "2.0.1"
   resolved "http://10.240.20.17:7001/basic-auth/download/basic-auth-2.0.1.tgz#b998279bf47ce38344b4f3cf916d4679bbf51e3a"
@@ -73,6 +78,11 @@ body-parser@1.18.3:
     qs "6.5.2"
     raw-body "2.3.3"
     type-is "~1.6.16"
+
+buffer-equal-constant-time@1.0.1:
+  version "1.0.1"
+  resolved "http://10.240.20.17:7001/buffer-equal-constant-time/download/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+  integrity sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk=
 
 bytes@3.0.0:
   version "3.0.0"
@@ -214,6 +224,13 @@ destroy@~1.0.4:
   resolved "http://10.240.20.17:7001/destroy/download/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
 
+ecdsa-sig-formatter@1.0.11:
+  version "1.0.11"
+  resolved "http://10.240.20.17:7001/ecdsa-sig-formatter/download/ecdsa-sig-formatter-1.0.11.tgz#ae0f0fa2d85045ef14a817daa3ce9acd0489e5bf"
+  integrity sha1-rg8PothQRe8UqBfao86azQSJ5b8=
+  dependencies:
+    safe-buffer "^5.0.1"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "http://10.240.20.17:7001/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -233,6 +250,21 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "http://10.240.20.17:7001/etag/download/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+express-jwt@^6.0.0:
+  version "6.0.0"
+  resolved "http://10.240.20.17:7001/express-jwt/download/express-jwt-6.0.0.tgz#20886c730983ffb1c706a4383235df86eff349b8"
+  integrity sha1-IIhscwmD/7HHBqQ4MjXfhu/zSbg=
+  dependencies:
+    async "^1.5.0"
+    express-unless "^0.3.0"
+    jsonwebtoken "^8.1.0"
+    lodash.set "^4.0.0"
+
+express-unless@^0.3.0:
+  version "0.3.1"
+  resolved "http://10.240.20.17:7001/express-unless/download/express-unless-0.3.1.tgz#2557c146e75beb903e2d247f9b5ba01452696e20"
+  integrity sha1-JVfBRudb65A+LSR/m1ugFFJpbiA=
 
 express@~4.16.1:
   version "4.16.4"
@@ -356,6 +388,22 @@ jade@~1.11.0:
     void-elements "~2.0.1"
     with "~4.0.0"
 
+jsonwebtoken@^8.1.0, jsonwebtoken@^8.5.1:
+  version "8.5.1"
+  resolved "http://10.240.20.17:7001/jsonwebtoken/download/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
+  integrity sha1-AOceC431TCEhofJhN98igGc7zA0=
+  dependencies:
+    jws "^3.2.2"
+    lodash.includes "^4.3.0"
+    lodash.isboolean "^3.0.3"
+    lodash.isinteger "^4.0.4"
+    lodash.isnumber "^3.0.3"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.once "^4.0.0"
+    ms "^2.1.1"
+    semver "^5.6.0"
+
 jstransformer@0.0.2:
   version "0.0.2"
   resolved "http://10.240.20.17:7001/jstransformer/download/jstransformer-0.0.2.tgz#7aae29a903d196cfa0973d885d3e47947ecd76ab"
@@ -364,10 +412,22 @@ jstransformer@0.0.2:
     is-promise "^2.0.0"
     promise "^6.0.1"
 
-jwt-simple@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.npmjs.org/jwt-simple/-/jwt-simple-0.5.6.tgz#3357adec55b26547114157be66748995b75b333a"
-  integrity sha512-40aUybvhH9t2h71ncA1/1SbtTNCVZHgsTsTgqPUxGWDmUDrXyDf2wMNQKEbdBjbf4AI+fQhbECNTV6lWxQKUzg==
+jwa@^1.4.1:
+  version "1.4.1"
+  resolved "http://10.240.20.17:7001/jwa/download/jwa-1.4.1.tgz#743c32985cb9e98655530d53641b66c8645b039a"
+  integrity sha1-dDwymFy56YZVUw1TZBtmyGRbA5o=
+  dependencies:
+    buffer-equal-constant-time "1.0.1"
+    ecdsa-sig-formatter "1.0.11"
+    safe-buffer "^5.0.1"
+
+jws@^3.2.2:
+  version "3.2.2"
+  resolved "http://10.240.20.17:7001/jws/download/jws-3.2.2.tgz#001099f3639468c9414000e99995fa52fb478304"
+  integrity sha1-ABCZ82OUaMlBQADpmZX6UvtHgwQ=
+  dependencies:
+    jwa "^1.4.1"
+    safe-buffer "^5.0.1"
 
 kind-of@^3.0.2:
   version "3.2.2"
@@ -380,6 +440,46 @@ lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "http://10.240.20.17:7001/lazy-cache/download/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
+
+lodash.includes@^4.3.0:
+  version "4.3.0"
+  resolved "http://10.240.20.17:7001/lodash.includes/download/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
+  integrity sha1-YLuYqHy5I8aMoeUTJUgzFISfVT8=
+
+lodash.isboolean@^3.0.3:
+  version "3.0.3"
+  resolved "http://10.240.20.17:7001/lodash.isboolean/download/lodash.isboolean-3.0.3.tgz#6c2e171db2a257cd96802fd43b01b20d5f5870f6"
+  integrity sha1-bC4XHbKiV82WgC/UOwGyDV9YcPY=
+
+lodash.isinteger@^4.0.4:
+  version "4.0.4"
+  resolved "http://10.240.20.17:7001/lodash.isinteger/download/lodash.isinteger-4.0.4.tgz#619c0af3d03f8b04c31f5882840b77b11cd68343"
+  integrity sha1-YZwK89A/iwTDH1iChAt3sRzWg0M=
+
+lodash.isnumber@^3.0.3:
+  version "3.0.3"
+  resolved "http://10.240.20.17:7001/lodash.isnumber/download/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
+  integrity sha1-POdoEMWSjQM1IwGsKHMX8RwLH/w=
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "http://10.240.20.17:7001/lodash.isplainobject/download/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
+
+lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "http://10.240.20.17:7001/lodash.isstring/download/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+  integrity sha1-1SfftUVuynzJu5XV2ur4i6VKVFE=
+
+lodash.once@^4.0.0:
+  version "4.1.1"
+  resolved "http://10.240.20.17:7001/lodash.once/download/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+  integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
+
+lodash.set@^4.0.0:
+  version "4.3.2"
+  resolved "http://10.240.20.17:7001/lodash.set/download/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+  integrity sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
 
 longest@^1.0.1:
   version "1.0.1"
@@ -430,11 +530,6 @@ mkdirp@~0.5.0:
   dependencies:
     minimist "^1.2.5"
 
-moment@^2.27.0:
-  version "2.27.0"
-  resolved "http://10.240.20.17:7001/moment/download/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
-  integrity sha1-i/9OPiaiNiIN/j423nVrbrqgEF0=
-
 morgan@~1.9.1:
   version "1.9.1"
   resolved "http://10.240.20.17:7001/morgan/download/morgan-1.9.1.tgz#0a8d16734a1d9afbc824b99df87e738e58e2da59"
@@ -450,6 +545,11 @@ ms@2.0.0:
   version "2.0.0"
   resolved "http://10.240.20.17:7001/ms/download/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+
+ms@^2.1.1:
+  version "2.1.2"
+  resolved "http://10.240.20.17:7001/ms/download/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
 
 negotiator@0.6.2:
   version "0.6.2"
@@ -549,10 +649,20 @@ safe-buffer@5.1.2:
   resolved "http://10.240.20.17:7001/safe-buffer/download/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha1-mR7GnSluAxN0fVm9/St0XDX4go0=
 
+safe-buffer@^5.0.1:
+  version "5.2.1"
+  resolved "http://10.240.20.17:7001/safe-buffer/download/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
+  integrity sha1-Hq+fqb2x/dTsdfWPnNtOa3gn7sY=
+
 "safer-buffer@>= 2.1.2 < 3":
   version "2.1.2"
   resolved "http://10.240.20.17:7001/safer-buffer/download/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
+
+semver@^5.6.0:
+  version "5.7.1"
+  resolved "http://10.240.20.17:7001/semver/download/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
+  integrity sha1-qVT5Ma66UI0we78Gnv8MAclhFvc=
 
 send@0.16.2:
   version "0.16.2"

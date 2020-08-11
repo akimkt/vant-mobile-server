@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var bootstrapRouter = require('./routes/bootstrap');
 var app = express();
+var token = require('./plugin/token');
+var expressJwt = require('express-jwt');
 const cors = require('cors');
 app.use(cors());
 // app.all('*', function(req, res, next) {
@@ -29,24 +31,58 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 解析token获取用户信息
+app.use(function(req, res, next) {
+	var token = req.headers['authorization'];
+	console.log('token', token);
+	if (token == undefined) {
+		return next();
+	} else {
+		token
+			.verToken(token)
+			.then((data) => {
+				console.log('验证token', data);
+				req.data = data;
+				return next();
+			})
+			.catch((error) => {
+				return next();
+			});
+	}
+});
+//验证token是否过期并规定哪些路由不用验证
+app.use(
+	expressJwt({
+		secret: 'mes_qdhd_mobile_xhykjyxgs',
+		algorithms: [ 'HS256' ]
+	}).unless({
+		path: [ '/users/login' ] //除了这个地址，其他的URL都需要验证
+	})
+);
+//当token失效返回提示信息
+app.use(function(err, req, res, next) {
+	if (err.status == 401) {
+		return res.status(401).send('token失效');
+	}
+});
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bootstrap', bootstrapRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+	next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+	// set locals, only providing error in development
+	res.locals.message = err.message;
+	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+	// render the error page
+	res.status(err.status || 500);
+	res.render('error');
 });
 
 module.exports = app;
