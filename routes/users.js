@@ -1,17 +1,19 @@
 var express = require('express');
 var router = express.Router();
-var token = require('./../plugin/token');
+var Tokens = require('../utils/tokens');
+var { paramAll, encryPassword } = require('./../utils/common');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	res.send('获取用户信息');
+	res.send('1');
 });
-
 router.post('/login', function(req, res, next) {
-	const { userName, password } = req.body;
-	if (userName === 'admin' && password === '123456') {
-		console.log(userName);
-		token
-			.setToken(userName)
+	var par = paramAll(req);
+	if (par.userName === 'admin' && (par.password === '123456' || par.password === '1234567')) {
+		var userInfo = {
+			userName: par.userName,
+			password: encryPassword(par.password)
+		};
+		Tokens.setToken(userInfo)
 			.then((token) => {
 				res.send({
 					code: 200,
@@ -33,7 +35,6 @@ router.post('/login', function(req, res, next) {
 	}
 });
 router.get('/info', function(req, res, next) {
-	console.log(req.query);
 	res.send({
 		code: 0,
 		data: {
